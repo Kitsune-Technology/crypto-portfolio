@@ -1,0 +1,127 @@
+/**Utilities**/
+* {
+  font-family: "roboto mono", monospace;
+}
+
+.align-center {
+  text-align: center;
+}
+
+html {
+  max-width: 1200px;
+  margin: auto;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+.font-700 {
+  font-weight: 700;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.even-columns {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 50em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+  }
+  .crypto-holding-grid {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-areas:
+      "holding-title holding-title holding-title"
+      "bitcoin-section ethereum-section dogecoin-section"
+      "ripple-section ethclassic-section cardano-section"
+      ". update-all .";
+  }
+}
+
+.bitcoin-section {
+  grid-area: bitcoin-section;
+}
+
+.ethereum-section {
+  grid-area: ethereum-section;
+}
+
+.dogecoin-section {
+  grid-area: dogecoin-section;
+}
+
+.ripple-section {
+  grid-area: ripple-section;
+}
+
+.ethclassic-section {
+  grid-area: ethclassic-section;
+}
+
+.cardano-section {
+  grid-area: cardano-section;
+}
+
+.crypto-holding-title {
+  grid-area: holding-title;
+}
+
+.crypto-holding-title h2 {
+  text-align: center;
+  font-weight: 600;
+}
+
+.holding-input {
+  border-radius: 0.3rem;
+  margin: 0.5rem 0;
+}
+
+.btn-update {
+  padding: 0.5rem;
+  background-color: hsl(167deg, 22%, 60%);
+  box-shadow: 0 1px 3px hsla(0deg 0% 0% / 0.3);
+  border-radius: 5px;
+  color: hsl(0 0% 10%);
+}
+
+.crypto-holding {
+  border-radius: 5px;
+  margin: 0.3rem;
+  padding: 0.5rem;
+  background-color: hsl(222deg 52% 95%);
+  border-style: solid;
+  border-color: hsl(222deg 40% 87%);
+  box-shadow: 4px 4px hsla(222deg 52% 85% /0.4);
+}
+
+.cardano-update {
+  grid-area: cardano-update;
+}
+
+.update-all {
+  grid-area: update-all;
+  background-color: hsl(222deg 40% 50%);
+  box-shadow: 0 2px 6px hsla(0 0% 0% / 0.2);
+  padding: 0.5em;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: hsl(222deg 40% 40%);
+  color: white;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.update-all:hover {
+  background-color: hsl(222deg 40% 30%);
+}
+
+.original-price {
+  font-weight: bold;
+}

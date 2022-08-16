@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700&display=swap"
+        rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src='index.js' defer></script>
+</head>
+
+<body>
+
+    <header class="align-center">
+        <h1>Crypto Portfolio</h1>
+    </header>
+    <section class="even-columns">
+        <div>
+            <div class="crypto-holding-title">
+                <h2 class="">Your Crypto Holding</h2>
+                <p class="font-700 underline">Current Crypto Prices:</p>
+                <p id="current-price"></p>
+                <p class="font-700">Total amount USD: <span id="total-usd"></span></p>
+            </div>
+            <div class="crypto-holding-grid">
+                <div class="crypto-holding bitcoin-section">
+                    <label class="bitcoin-label" for="bitcoin-holding">Bitcoin:</label>
+                    <input name="Bitcoin" data-update-coin="Bitcoin" type="number" step="0.00000001" min="0"
+                        max="21000000" value="0" id="bitcoin-holding" class="bitcoin-input holding-input">
+                    <button type="button" id="update-bitcoin" class="btn-update bitcoin-update"
+                        onclick="updateCrypto('Bitcoin')">Update
+                        Bitcoin</button>
+                    <p id="usd-amount">USD Amount: <span id="bitcoin-usd"></span></p>
+                </div>
+                <div class="crypto-holding ethereum-section">
+                    <label class="ethereum-label" for="eth-holding">Ethereum:</label>
+                    <input name="Ethereum" data-update-coin="Ethereum" min="0" type="number" step="0.000000001"
+                        value="0" id="eth-holding" class="ethereum-input holding-input">
+                    <button type="button" id="update-eth" class="btn-update ethereum-update"
+                        onclick="updateCrypto('Ethereum')">Update
+                        Ethereum</button>
+                    <p class="usd-amount">USD Amount: <span id="ethereum-usd"></span></p>
+                </div>
+                <div class="crypto-holding dogecoin-section">
+                    <label class="dogecoin-label" for="doge-holding">Dogecoin:</label>
+                    <input name="Dogecoin" data-update-coin="Dogecoin" min="0" type="number" step="0.000000001"
+                        value="0" id="doge-holding" class="dogecoin-input holding-input">
+                    <button type="button" id="update-dogecoin" class=" btn-update dogecoin-update"
+                        onclick="updateCrypto('Dogecoin')">Update
+                        Dogecoin</button>
+                    <p class="usd-amount">USD Amount: <span id="dogecoin-usd"></span></p>
+                </div>
+                <div class="crypto-holding ripple-section">
+                    <label class="ripple-label" for="ripple-holding">XRP (Ripple):</label>
+                    <input name="Ripple" data-update-coin="Ripple" min="0" type="number" step="0.000001" value="0"
+                        id="ripple-holding" class="ripple-input holding-input">
+                    <button type="button" id="update-ripple" class="btn-update ripple-update"
+                        onclick="updateCrypto('Ripple')">Update
+                        XRP</button>
+                    <p class="usd-amount">USD Amount: <span id="ripple-usd"></span></p>
+                </div>
+                <div class="crypto-holding ethclassic-section">
+                    <label class="ethclassic-label" for="ethClassic-holding">Ethereum Classic:</label>
+                    <input name="Ethereum-Classic" data-update-coin="Ethereum-Classic" min="0" type="number"
+                        step="0.000000001" value="0" id="ethclassic-holding" class="ethclassic-input holding-input">
+                    <button type="button" id="update-ethclassic" class="btn-update ethclassic-update"
+                        onclick="updateCrypto('Ethereum-Classic')">Update
+                        Ethereum Classic</button>
+                    <p class="usd-amount">USD Amount: <span id="ethereum-classic-usd"></span></p>
+                </div>
+                <div class="crypto-holding cardano-section">
+                    <label class="cardano-label" for="cardano-holding">Cardano:</label>
+                    <input name="Cardano" data-update-coin="Cardano" min="0" type="number" step="0.001" value="0"
+                        id="cardano-holding" class="cardano-input holding-input">
+                    <button type="button" id="update-cardano" class="btn-update cardano-update"
+                        onclick="updateCrypto('Cardano')">Update
+                        Cardano</button>
+                    <p class="">USD Amount: <span id="cardano-usd"></span></p>
+                </div>
+                <button type="button" id="update-chart" class="update-all" data-update-coin="all"
+                    onclick="updateCrypto('all')">Update
+                    All</button>
+            </div>
+        </div>
+        <div class="pie-graph">
+            <canvas id="pie-chart"></canvas>
+        </div>
+        <div>
+
+        </div>
+    </section>
+</body>
+
+</html>
