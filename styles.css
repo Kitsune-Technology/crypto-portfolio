@@ -14,6 +14,7 @@ html {
 
 body {
   background-color: whitesmoke;
+  margin-bottom: 20px;
 }
 
 .font-500 {
@@ -31,13 +32,27 @@ body {
 
 .even-columns {
   display: grid;
+  grid-template-areas: "chart" "prices";
   gap: 1rem;
+}
+
+.values {
+  grid-area: "chart";
+}
+
+.crypto-grid-holding {
+  display: grid;
+}
+
+.pie-graph {
+  grid-area: "chart";
 }
 
 @media (min-width: 50em) {
   .even-columns {
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr;
+    grid-template-areas: "values chart";
   }
   .crypto-holding-grid {
     display: grid;
